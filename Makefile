@@ -72,6 +72,7 @@ LIBEXECDIR  ?= ${PREFIX}/libexec/fasda
 
 # No full pathnames for these.  Allow PATH to dtermine which one is used
 # in case a locally installed version is preferred.
+MKDIR   ?= mkdir
 INSTALL ?= install
 SED     ?= sed
 CHMOD   ?= chmod
