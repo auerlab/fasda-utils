@@ -66,9 +66,9 @@ cond2_file="$3"
 
 # Concatenate corresponding lines from the normalized counts files
 # and remove the 2nd occurrence of the feature name (column 5 in pasted output)
-tmp1=$(mktemp -p . -t cond1)
-tmp2=$(mktemp -p . -t cond2)
-names=$(mktemp -p . -t names)
+tmp1=$(mktemp ./cond1.XXXXXXXXXX)
+tmp2=$(mktemp ./cond2.XXXXXXXXXX)
+names=$(mktemp ./names.XXXXXXXXXX)
 awk '{ print $1 }' $features_file > $names
 fgrep -f $names "$cond1_file" > $tmp1
 fgrep -f $names "$cond2_file" | cut -f 2- > $tmp2
