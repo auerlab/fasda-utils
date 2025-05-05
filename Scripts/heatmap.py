@@ -61,5 +61,5 @@ if debug:
 
 counts_row_norm = counts_row_norm.set_index('Feature')
 # seaborn.clustermap(counts_row_norm)
-seaborn.clustermap(counts_row_norm, col_cluster=False, cmap="RdBu_r", figsize=(10,10))
+seaborn.clustermap(counts_row_norm, z_score=0, col_cluster=False, cmap="RdBu_r", figsize=(10,10))
 plt.show()
