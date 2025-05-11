@@ -95,3 +95,4 @@ head $counts | column -t
 
 # Generate and display clustered heatmap
 /usr/local/libexec/fasda/heatmap.py $flags $counts
+rm -f $tmp1 $tmp2 $names
