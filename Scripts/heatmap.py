@@ -3,6 +3,19 @@
 # Derived from https://igb.mit.edu/mini-courses/python/data-processing-with-python/seaborn/visualizing-rnaseq-data
 
 import sys, os
+
+# Dreckly/pkgsrc python has tkinter disabled by default and used the py-Tk
+# package to supply it.  We must explicitly switch the backend from
+# headless Agg to TkAgg for interactive plots with plt.show().
+# On macOS, python uses a different default, though.
+# TkAgg is the default on FreeBSD, but it doesn't hurt to load it explicitly.
+# Do this before anything that depends on matplotlib, otherwise the default
+# headless Agg will be loaded by dreckly python
+import platform
+if platform.system() != 'Darwin':
+    import matplotlib
+    matplotlib.use("TkAgg")
+
 import pandas
 import numpy
 import scipy
